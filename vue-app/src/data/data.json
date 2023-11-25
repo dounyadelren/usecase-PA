@@ -1,0 +1,74 @@
+[
+  {
+    "ID": 1,
+    "type": "Studio",
+    "zipCode": "75001",
+    "price": "500",
+    "available": true,
+    "dateAvailable": null
+  },
+  {
+    "ID": 2,
+    "type": "Appartment",
+    "zipCode": "75016",
+    "price": "1200",
+    "available": false,
+    "dateAvailable": "06-08-2023"
+  },
+  {
+    "ID": 3,
+    "type": "House",
+    "zipCode": "91400",
+    "price": "1600",
+    "available": true,
+    "dateAvailable": null
+  },
+  {
+    "ID": 4,
+    "type": "Appartment",
+    "zipCode": "75002",
+    "price": "1000",
+    "available": true,
+    "dateAvailable": null
+  },
+  {
+    "ID": 5,
+    "type": "House",
+    "zipCode": "75020",
+    "price": "3000",
+    "available": false,
+    "dateAvailable": "18-09-2023"
+  },
+  {
+    "ID": 6,
+    "type": "Studio",
+    "zipCode": "75005",
+    "price": "450",
+    "available": false,
+    "dateAvailable": "10-11-2023"
+  },
+  {
+    "ID": 7,
+    "type": "Studio",
+    "zipCode": "75017",
+    "price": "650",
+    "available": true,
+    "dateAvailable": null
+  },
+  {
+    "ID": 8,
+    "type": "Châlet",
+    "zipCode": "93100",
+    "price": "2400",
+    "available": false,
+    "dateAvailable": "31-12-2023"
+  },
+  {
+    "ID": 9,
+    "type": "Studio",
+    "zipCode": "75018",
+    "price": "300",
+    "available": true,
+    "dateAvailable": null
+  }
+]
