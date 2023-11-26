@@ -6,5 +6,12 @@ module.exports = {
     './src/**/*.jsx',
     './src/**/*.tsx',
   ],
-  // ... autres configurations
+  theme: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      serif: ['Inter', 'serif'],
+    },
+    darkMode: 'class',
+  }
+
 }
