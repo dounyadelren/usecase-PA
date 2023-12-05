@@ -22,41 +22,45 @@ const getPropertyList = () => {
     });
 };
 
+const searchData = ($event: any) => {
+  searchParam.value = $event
+}
+
 onMounted(() => {
   getPropertyList();
 });
 
-// const filteredProperties = computed(() => {
-//   const query = searchParam.value.trim().toLowerCase();
-//   if(query === '') {
-//     noResults.value = false
-//     nbOfResults.value = ''
-//     return propertyList.value
-//   }
-//   const results = propertyList.value.filter((property:any) => {
-//     return (
-//       property.type.toLowerCase().includes(query) ||
-//       property.price.toString().includes(query) ||
-//       property.zipCode.toString().includes(query) ||
-//       property.dateAvailable.zip.toLowerCase().includes(query)
-//     );
-//   });
-//   if (results.length === 0) {
-//     noResults.value = true;
-//   } else {
-//     noResults.value = false;
-//     nbOfResults.value = results.length.toString();
-//   }
-//   return results
-// });
+const filteredProperties = computed(() => {
+  const query = searchParam.value.trim().toLowerCase();
+  if(query === '') {
+    noResults.value = false
+    nbOfResults.value = ''
+    return propertyList.value
+  }
+  const results = propertyList.value.filter((property:any) => {
+    return (
+      property.type.toLowerCase().includes(query) ||
+      property.price.toString().includes(query) ||
+      property.zipCode.toString().includes(query) ||
+      (property.dateAvailable && property.dateAvailable.toLowerCase().includes(query))
+    );
+  });
+  if (results.length === 0) {
+    noResults.value = true;
+  } else {
+    noResults.value = false;
+    nbOfResults.value = results.length.toString();
+  }
+  return results
+});
 </script>
 <template>
   <main class="container mx-auto">
-    <SearchBarInput />
+    <SearchBarInput @search="searchData" />
     <hr class="w-full" />
     <div class="flex flex-wrap flex-row justify-center gap-3">
       <NoResults v-if="noResults" />
-      <CardList v-else :propertyList="propertyList" />
+      <CardList v-else :propertyList="filteredProperties" />
     </div>
   </main>
 </template>
